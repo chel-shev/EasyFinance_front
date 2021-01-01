@@ -1,0 +1,46 @@
+@import "../color";
+
+.login__social-network {
+  height: calc(125px / 2);
+  width: 300px;
+
+  .login__vk {
+    height: 100%;
+    width: 75px;
+    display: inline-block;
+    background-image: url("icon/vk.svg");
+    background-size: 20px 20px;
+    background-repeat: no-repeat;
+    background-position: top;
+  }
+
+  .login__fb {
+    height: 100%;
+    width: 75px;
+    display: inline-block;
+    background-image: url("icon/fb.svg");
+    background-size: 20px 20px;
+    background-repeat: no-repeat;
+    background-position: top;
+  }
+
+  .login__instagram {
+    height: 100%;
+    width: 75px;
+    display: inline-block;
+    background-image: url("icon/insta.svg");
+    background-size: 20px 20px;
+    background-repeat: no-repeat;
+    background-position: top;
+  }
+
+  .login__twitter {
+    height: 100%;
+    width: 75px;
+    display: inline-block;
+    background-image: url("icon/twitter.svg");
+    background-size: 20px 20px;
+    background-repeat: no-repeat;
+    background-position: top;
+  }
+}

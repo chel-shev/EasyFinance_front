@@ -1,0 +1,32 @@
+@import "color";
+
+.button {
+  height: 30px;
+  border-radius: 4px;
+  border: none;
+  transition: all 0.3s ease;
+  cursor: pointer;
+
+  &:hover {
+    background: $first-accent;
+    color: $dark;
+    box-shadow: 0 0 5px $glass-dark;
+  }
+}
+
+.input {
+  height: 30px;
+  width: 300px;
+  background: $light;
+  text-align: center;
+  border: none;
+  outline: none;
+  border-bottom: 2px $dark solid;
+  transition: all 0.2s ease;
+
+
+  &:hover, &:focus, &:active {
+    border: none;
+    border-bottom: 2px $first-accent solid;
+  }
+}

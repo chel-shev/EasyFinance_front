@@ -1,0 +1,31 @@
+*, html {
+  font-family: "Regular", serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+
+body {
+  background-image: url("bg.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+@font-face {
+  font-family: 'Thin';
+  src: url('./font/JetBrainsMono-Thin.ttf');
+}
+
+@font-face {
+  font-family: 'Bold';
+  src: url('./font/JetBrainsMono-Bold.ttf');
+}
+
+@font-face {
+  font-family: 'Regular';
+  src: url('./font/JetBrainsMono-Regular.ttf');
+}

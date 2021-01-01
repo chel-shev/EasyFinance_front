@@ -1,25 +1,53 @@
-import logo from './logo.svg';
-import './App.css';
+import './App.scss';
+import React, {Component} from 'react'
+import LoginPage from "./login/LoginPage";
+import Quotes from "./login/Quotes";
+import {connect} from 'react-redux'
+import {fetchQuote, fetchSecretQuote, logoutUser} from "./redux/actions";
+import LogoutButton from "./login/LogoutButton";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+
+class App extends Component {
+
+    render() {
+        const { dispatch, quote, isAuthenticated, errorMessage, isSecretQuote } = this.props
+
+        return (
+            <div className='container'>
+                {!isAuthenticated &&
+                <LoginPage isAuthenticated={isAuthenticated}
+                           errorMessage={errorMessage}
+                           dispatch={dispatch}/>
+                }
+                {isAuthenticated &&
+                    <LogoutButton onLogoutClick={() => dispatch(logoutUser())} />
+                }
+                <div className='container'>
+                    <Quotes
+                        onQuoteClick={() => dispatch(fetchQuote())}
+                        onSecretQuoteClick={() => dispatch(fetchSecretQuote())}
+                        isAuthenticated={isAuthenticated}
+                        quote={quote}
+                        isSecretQuote={isSecretQuote}
+                    />
+                </div>
+            </div>
+        );
+    }
 }
 
-export default App;
+function mapStateToProps(state) {
+
+    const { quotes, auth } = state
+    const { quote, authenticated } = quotes
+    const { isAuthenticated, errorMessage } = auth
+
+    return {
+        quote,
+        isSecretQuote: authenticated,
+        isAuthenticated,
+        errorMessage
+    }
+}
+
+export default connect(mapStateToProps)(App)

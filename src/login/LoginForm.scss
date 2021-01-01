@@ -1,0 +1,52 @@
+@import '../color';
+
+.login__form {
+
+  height: 155px;
+
+  .login__email {
+    margin-bottom: 25px;
+    background: url(icon/user.svg) no-repeat scroll 7px 7px;
+    background-size: 15px 15px;
+
+    &:hover, &:focus, &:active {
+      //background: url(icon/user-accent.svg) no-repeat scroll 7px 7px;
+      //background-size: 15px 15px;
+    }
+  }
+
+  .login__password {
+    margin-bottom: 40px;
+    background: url(icon/padlock.svg) no-repeat scroll 7px 7px;
+    background-size: 15px 15px;
+
+    &:hover, &:focus, &:active {
+      //background: url(icon/padlock-accent.svg) no-repeat scroll 7px 7px;
+      //background-size: 15px 15px;
+    }
+  }
+
+  .login__login {
+    background: $dark;
+    color: $light;
+    width: 130px;
+    float: left;
+
+    &:hover {
+      background: $first-accent;
+      color: $dark;
+    }
+  }
+
+  .login__sign-up {
+    background: $dark;
+    color: $light;
+    width: 130px;
+    float: right;
+
+    &:hover {
+      background: $first-accent;
+      color: $dark;
+    }
+  }
+}

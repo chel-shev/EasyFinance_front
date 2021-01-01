@@ -1,0 +1,102 @@
+@import '../color';
+
+.login {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 800px;
+  height: 500px;
+  box-shadow: 0 0 20px $glass-dark;
+
+  .login__welcome {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 400px;
+    height: 500px;
+    background: $glass-dark;
+    backdrop-filter: blur(1px);
+    padding: 50px;
+
+    .login__welcome-text {
+      margin-top: 40px;
+      font-size: 14px;
+      color: $light;
+      font-family: "Thin", serif;
+    }
+
+    .login__app-name {
+      font-size: 48px;
+      font-family: "Bold", serif;
+      color: $first-accent;
+      transition: color 0.3s ease;
+    }
+
+    .login__quote {
+      position: absolute;
+      bottom: 80px;
+      right: 50px;
+      font-size: 14px;
+      font-family: "Thin", serif;
+      color: $light;
+    }
+
+    .login__quote-author {
+      position: absolute;
+      bottom: 50px;
+      right: 50px;
+      font-size: 14px;
+      font-family: "Thin", serif;
+      color: $light;
+    }
+  }
+
+  .login__page {
+    position: absolute;
+    top: 0;
+    left: 400px;
+    width: 400px;
+    height: 500px;
+    background: $light;
+    padding: 50px;
+
+    .login__logo {
+      height: 120px;
+      background-image: url("icon/logo.svg");
+      background-repeat: no-repeat;
+      background-position-x: center;
+    }
+
+    .login__or {
+      height: 100px;
+      line-height: 100px;
+      width: 100%;
+      text-align: center;
+      position: relative;
+      font-family: "Bold", serif;
+
+      &::before {
+        content: '';
+        display: block;
+        position: absolute;
+        top: 50%;
+        left: 0;
+        height: 2px;
+        width: 130px;
+        background: $dark;
+      }
+
+      &::after {
+        content: '';
+        display: block;
+        position: absolute;
+        top: 50%;
+        right: 0;
+        height: 2px;
+        width: 130px;
+        background: $dark;
+      }
+    }
+  }
+}
